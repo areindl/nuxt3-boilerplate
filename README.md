@@ -9,23 +9,29 @@ Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduct
 * [Tailwind CSS](https://tailwindcss.com/docs)
 * [Shadcn-Vue](https://www.shadcn-vue.com/docs)
 * [Nuxt-Icon with Tabler-Icons](https://icones.js.org/collection/tabler)
+* [Docker](https://www.docker.com/)
 
 ## Setup
 
 Make sure to install dependencies:
 
 ```bash
-# npm
 npm install
 ```
 
-## Development Server
+## Development Server via Docker 
 
 Start the development server on `http://localhost:3000` :
 
 ```bash
-# npm
-npm run dev
+npm run docker:dev
+```
+
+Run production build:
+
+```bash
+npm run docker:prod
+```
 
 ## Add a component
 
