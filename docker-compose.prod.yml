@@ -1,5 +1,5 @@
 services:
-  nuxt-dev:
+  nuxt-prod:
     build:
       context: .
     volumes:
@@ -8,5 +8,5 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - NODE_ENV=development
-    command: npm run dev
+      - NODE_ENV=production
+    command: npm run start

@@ -3,5 +3,7 @@
 /.output
 /node_modules
 
+dist
 .gitignore
 README.md
+npm-debug.log

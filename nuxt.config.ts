@@ -10,10 +10,7 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "shadcn-nuxt", "@nuxtjs/color-mode", "@nuxt/icon"],
 
   /* Module Configuration */
-  tailwindcss: {
-    exposeConfig: true,
-    viewer: true,
-  },
+  tailwindcss: {},
 
   icon: {
     serverBundle: {

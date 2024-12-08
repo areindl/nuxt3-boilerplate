@@ -1,31 +1,25 @@
-# syntax = docker/dockerfile:1
+# Use a lightweight Node.js image
+FROM node:22-alpine
 
-ARG NODE_VERSION=lts
+# Set working directory
+WORKDIR /app
 
-FROM node:${NODE_VERSION}-slim AS base
+# Copy package.json and package-lock.json
+COPY package*.json ./
 
-ARG PORT=3000
+# Install dependencies
+RUN npm ci && npm cache clean --force
 
-WORKDIR /src
-
-# Build
-FROM base AS build
-
-COPY --link package.json package-lock.json .
-RUN npm install
-
-COPY --link . .
-
+# Build the application
 RUN npm run build
 
-# Run
-FROM base
+# Copy application code
+COPY . .
 
-ENV PORT=$PORT
-ENV NODE_ENV=production
 
-COPY --from=build /src/.output /src/.output
-# Optional, only needed if you rely on unbundled dependencies
-# COPY --from=build /src/node_modules /src/node_modules
+# expose the host and port 3000 to the server
+ENV HOST 0.0.0.0
+EXPOSE 3000
 
-CMD [ "node", ".output/server/index.mjs" ]
+# Default command to run the Nuxt application
+CMD [ "npm", "run", "start" ]

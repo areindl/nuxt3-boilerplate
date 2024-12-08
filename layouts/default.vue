@@ -37,7 +37,7 @@ const { navigation } = appConfig
               v-for="item in navigation"
               :key="item.to"
               :to="item.to"
-              class="desktopmenu flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+              class="desktopmenu flex items-center gap-3 rounded-lg px-3 py-2 text-gray-600 transition-all hover:text-gray-900"
               :title="item.title"
             >
               <Icon v-if="item.icon" :name="item.icon" class="size-4" />
@@ -67,7 +67,7 @@ const { navigation } = appConfig
                 v-for="item in navigation"
                 :key="item.to"
                 :to="item.to"
-                class="mobilemenu mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+                class="mobilemenu mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-gray-500 hover:text-gray-900"
                 :title="item.title"
               >
                 <Icon v-if="item.icon" :name="item.icon" class="size-5" />
@@ -103,10 +103,10 @@ const { navigation } = appConfig
 
 <style lang="css" scoped>
 .desktopmenu.router-link-active {
-  @apply text-muted-foreground bg-accent;
+  @apply text-gray-800 bg-gray-200;
 }
 
 .mobilemenu.router-link-active {
-  @apply text-muted-foreground bg-accent;
+  @apply text-gray-800 bg-gray-200;
 }
 </style>
